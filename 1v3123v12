@@ -1,0 +1,21 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "FxZ Hub Beta", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "INF FISH",
+	Callback = function()
+      		print("button pressed")
+            local args = {
+    [1] = "add",
+    [2] = 20000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CurrencyTransaction"):FireServer(unpack(args))
+  	end    
+})
